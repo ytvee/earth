@@ -18,11 +18,15 @@ python3 -m http.server 8000 --directory dist
 - `dist/vendor/` — Three.js 0.180.0 и OrbitControls.
 - `dist/assets/earth.jpg` — текстура Земли.
 - `dist/assets/countries.json` — упрощённые географические границы.
-- `.github/workflows/pages.yml` — публикация dist при push в main.
+- `index.html` — входная страница GitHub Pages; использует ресурсы из `dist/`.
+- `.nojekyll` — публикация статических файлов без обработки Jekyll.
+- `.github/workflows/pages.yml` — проверка JavaScript и геоданных.
 
 ## GitHub Pages
 
-В Settings → Pages выберите Source: GitHub Actions. Публикация запускается при push в main или вручную из Actions. Все пути относительные и поддерживают размещение в подпапке репозитория.
+Сайт: https://ytvee.github.io/earth/
+
+Pages публикует ветку `main`, папку `/ (root)` (Deploy from a branch). В корне находится входная страница глобуса, ресурсы загружаются из `dist/`. Публикация запускается автоматически после push в main.
 
 ## Источники и ограничения
 
